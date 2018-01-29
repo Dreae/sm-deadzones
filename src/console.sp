@@ -52,8 +52,7 @@ public Action Cmd_SaveDeadzone(int client, int args) {
 public Action Cmd_DeleteDeadzone(int client, int args) {
     for (int i = 0; i < g_iNumZones; i++) {
         if (InsideZone(client, g_fDeadzones[i][0], g_fDeadzones[i][1])) {
-            // TODO: This is leaking heap somehow
-            float[][][] zoneBuffer = new float[g_iNumZones - i][2][3];
+            float zoneBuffer[63][2][3];
             for (int j = i + 1; j < g_iNumZones; j++) {
                 zoneBuffer[j - (i + 1)][0][0] = g_fDeadzones[j][0][0];
                 zoneBuffer[j - (i + 1)][0][1] = g_fDeadzones[j][0][1];
