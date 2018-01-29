@@ -1,5 +1,7 @@
-image: registry.gitlab.com/dreae/sourcemod-build:latest
-entrypoint: bash
+image: 
+  name: registry.gitlab.com/dreae/sourcemod-build:latest
+  entrypoint: 
+  - bash
 
 build:
   script:
