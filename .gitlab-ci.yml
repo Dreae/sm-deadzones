@@ -1,0 +1,9 @@
+image: registry.gitlab.com/dreae/sourcemod-build:latest
+entrypoint: bash
+
+build:
+  script:
+  - /sourcemod/scripting/spcomp -o deadzones src/plugin.sp
+  artifacts:
+    paths:
+      - deadzones.smx
