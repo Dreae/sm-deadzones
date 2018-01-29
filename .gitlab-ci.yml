@@ -1,7 +1,7 @@
 image: 
   name: registry.gitlab.com/dreae/sourcemod-build:latest
   entrypoint: 
-  - bash
+  - /bin/bash
 
 build:
   script:
