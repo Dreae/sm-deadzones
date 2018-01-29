@@ -38,7 +38,9 @@ public bool IsValidClient(int client) {
 
 public Action On_PlayerSpawned(Event event, const char[] name, bool dontBroadcast) {
     int client = event.GetInt("userid");
-    g_bGodMode[client] = false;
+    if (IsValidClient(client)) {
+        g_bGodMode[client] = false;
+    }
 }
 
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float[3] vel, float[3] angles, int &weapon) {
