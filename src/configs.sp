@@ -10,6 +10,8 @@ void CheckConfigDir() {
 }
 
 void LoadZones(const char[] map) {
+    g_iNumZones = 0;
+
     char mapConfig[256];
     BuildPath(Path_SM, mapConfig, 256, "configs/deadzones/%s.txt", map);
 
@@ -43,7 +45,7 @@ void SaveZones(const char[] map) {
         char sectionName[16];
         Format(sectionName, 16, "zone%i", i);
 
-        mapZones.JumpToKey(sectionName, true);        
+        mapZones.JumpToKey(sectionName, true);
 
         float point1[3];
         point1[0] = g_fDeadzones[i][0][0];

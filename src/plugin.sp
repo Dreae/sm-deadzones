@@ -40,6 +40,10 @@ public Action On_PlayerSpawned(Event event, const char[] name, bool dontBroadcas
     int client = event.GetInt("userid");
     if (IsValidClient(client)) {
         g_bGodMode[client] = false;
+        if (InsideDeadzone(client)) {
+            SetEntProp(client, Prop_Data, "m_takedamage", 0, 1);
+            g_bGodMode[client] = true;
+        }
     }
 }
 
