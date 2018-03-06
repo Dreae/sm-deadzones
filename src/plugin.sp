@@ -5,7 +5,7 @@ public Plugin myinfo = {
     name = "Deadzones",
     author = "Dreae",
     description = "Place player deadzones",
-    version = "1.0.0",
+    version = "1.0.1",
     url = "https://dreae.onl"
 };
 
